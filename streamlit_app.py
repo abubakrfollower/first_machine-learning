@@ -33,7 +33,7 @@ with st.sidebar:
        'bill_length_mm': bill_length_mm,
        'flipper_length_mm': flipper_length_mm,
        'body_mass_g': body_mass_g,
-       'gender': gender}
+       'sex': gender}
   input_df = pd.DataFrame(data, index=[0])
   input_penguins = pd.concat([input_df, X], axis=0)
 
