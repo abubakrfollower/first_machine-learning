@@ -17,7 +17,7 @@ with st.expander("data"):
   y_raw = df.species
   y_raw
   y = df.species
-  y
+  
 
 with st.expander("Data Visualization"):
   st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
@@ -34,6 +34,7 @@ with st.sidebar:
   # Create a DataFrame for the input features
   data = {'island': island,
        'bill_length_mm': bill_length_mm,
+       'bill_depth_mm': bill_depth_mm,
        'flipper_length_mm': flipper_length_mm,
        'body_mass_g': body_mass_g,
        'sex': gender}
@@ -62,8 +63,6 @@ def target_encode(val):
   return target_mapper[val]
 
 y = y_raw.apply(target_encode)
-y 
-y_raw
 
 
 with st.expander('Data preparation'):
@@ -83,11 +82,11 @@ prediction = clf.predict(input_row)
 prediction_proba = clf.predict_proba(input_row)  # Fixed this line
 
 df_prediction_proba = pd.DataFrame(prediction_proba)
-df_prediction_proba.column = ['Adelie', 'Chinstrap', 'Gentoo']
+df_prediction_proba.columns = ['Adelie', 'Chinstrap', 'Gentoo']
 df_prediction_proba.rename(columns={0: 'Adelie',
                                     1: 'Chinstrap',
                                     2: 'Gentoo'})
-df_prediction_proba
+
 #Display predicted species
 st.subheader('Predicted Species')
 penguins_species = np.array(['Adelie', 'Chinstrap', 'Gentoo'])
