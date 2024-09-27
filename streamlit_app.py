@@ -8,5 +8,11 @@ st.info("This is my first app")
 with st.expander("data"):
   st.write("**Raw data**")
   df = pd.read_csv("https://raw.githubusercontent.com/dataprofessor/data/refs/heads/master/penguins_cleaned.csv")
-  df
+  df 
+  st.write('**X**')
+  X = df.drop('sprecies', axis=1)
+  X
+  st.write('**y**')
+  y = df.species
+  y
 
