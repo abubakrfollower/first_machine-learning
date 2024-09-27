@@ -79,5 +79,5 @@ clf.fit(X, y)
 
 ## Apply model to make predictions
 prediction = clf.predict(input_row)
-prediction_prob = clf.prediction_prob(input_row)
-
+prediction_proba = clf.prediction_proba(input_row)
+prediction_proba
